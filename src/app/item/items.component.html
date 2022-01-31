@@ -22,12 +22,8 @@ These components make use of the NativeScript core theme, which styles them with
 The theme also provides a set of helper class names such as p-20, h1, h2, and text-center to enhance styling.
 You can learn more about the NativeScript core theme at https://github.com/nativescript/theme
 -->
-<GridLayout>
-  <ListView [items]="items">
-    <ng-template let-item="item">
-      <StackLayout [nsRouterLink]="['/item', item.id]">
-        <Label [text]="item.name"></Label>
-      </StackLayout>
-    </ng-template>
-  </ListView>
-</GridLayout>
+<StackLayout height="100%">
+  <Lable text="WHat is going on "></Lable>
+  <Button text="click" (tap)="load()"></Button>
+  <Button text="do nothing" ></Button>
+</StackLayout>
