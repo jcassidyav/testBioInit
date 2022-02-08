@@ -23,20 +23,7 @@ export class ItemsComponent implements OnInit {
     this.demo = new DemoSharedFirebaseMessaging();
   }
 
-  
-    load(): void {
-      
-		/* ***********************************************************
-		 * Use the "ngOnInit" handler to initialize data for this component.
-		 *************************************************************/
-
-			console.info('ngOnInit');
-			
-			this.demo.testIt(this.ngZone, this.httpClient);
-
-	}
-
-  async clickit() {
-    await this.demo.testIt2(this.ngZone, this.httpClient);
+  clickit() {
+    this.demo.testIt2(this.ngZone, this.httpClient).finally(()=>console.log("FINALLY"));
   }
 }
