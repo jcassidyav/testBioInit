@@ -35,4 +35,8 @@ export class ItemsComponent implements OnInit {
 			this.demo.testIt(this.ngZone, this.httpClient);
 
 	}
+
+  async clickit() {
+    await this.demo.testIt2(this.ngZone, this.httpClient);
+  }
 }
