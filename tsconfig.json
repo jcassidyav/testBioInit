@@ -8,7 +8,7 @@
     "noEmitHelpers": true,
     "noEmitOnError": true,
     "skipLibCheck": true,
-    "lib": ["es2017", "dom"],
+    "lib": ["es2015", "dom"],
     "baseUrl": ".",
     "paths": {
       "~/*": ["src/*"],

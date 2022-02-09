@@ -14,7 +14,7 @@
     "@angular/router": "~13.1.1",
     "@nativescript/angular": "^13.0.0",
     "@nativescript/core": "~8.1.1",
-    "@nativescript/fingerprint-auth": "7.0.0",
+    "@nativescript/biometrics": "latest",
     "@nativescript/theme": "~3.0.1",
     "rxjs": "~7.4.0",
     "zone.js": "~0.11.4"

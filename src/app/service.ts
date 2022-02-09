@@ -2,9 +2,9 @@
 //import {} from '@nativescript/firebase-messaging';
 import { HttpClient } from '@angular/common/http';
 import { NgZone } from '@angular/core';
-import { FingerprintAuth, BiometricIDAvailableResult } from '@nativescript/fingerprint-auth';
+import { BiometricAuth, BiometricIDAvailableResult } from '@nativescript/biometrics';
 import { Dialogs, Http } from '@nativescript/core';
-const fingerprint = new FingerprintAuth();
+const fingerprint = new BiometricAuth();
 import { runOnUIThread } from './threads'
 export class DemoSharedFirebaseMessaging  {
 
@@ -15,13 +15,14 @@ export class DemoSharedFirebaseMessaging  {
 				console.log('test firebase-messaging!');
 				return this.bioAvailable().then((result) => {
 					return fingerprint
-						.didFingerprintDatabaseChange()
+						.didBiometricDatabaseChange()
 						.then((changed) => {
 							if (changed) {
 								return false;
 							} else {
 								return fingerprint
-									.verifyFingerprintWithCustomFallback({
+									.verifyBiometric({
+										pinFallback: true,
 										fallbackMessage:'hello',
 										message: 'To make logging in easier for you',								
 									})
@@ -65,7 +66,7 @@ export class DemoSharedFirebaseMessaging  {
 			}
 
 	bioAvailable(): Promise<BiometricIDAvailableResult> {
-		return fingerprint.didFingerprintDatabaseChange().then((result) => {
+		return fingerprint.didBiometricDatabaseChange().then((result) => {
 			return fingerprint.available();
 		});
 		
